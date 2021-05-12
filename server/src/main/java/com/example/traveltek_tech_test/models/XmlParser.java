@@ -1,26 +1,27 @@
 package com.example.traveltek_tech_test.models;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import org.json.JSONObject;
+import org.json.XML;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class XmlParser {
 
-    XmlMapper xmlMapper = new XmlMapper();
-    private byte[] xml;
-    Flight flight = xmlMapper.readValue(xml, Flight.class);
+    private static String line = "", str = "";
 
-    ObjectMapper mapper = new ObjectMapper();
-    String json; {
-        try {
-            json = mapper.writeValueAsString(flight);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
+    public static void main(String[] args) throws IOException {
+
+        String link = "src/main/resources/flighdata_A.xml";
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(link));
+
+        while ((line = bufferedReader.readLine()) != null) {
+            str += line;
         }
-    }
 
-    public XmlParser() throws IOException {
+        JSONObject jsonData = XML.toJSONObject(str);
+        System.out.println(jsonData);
+
     }
 }
