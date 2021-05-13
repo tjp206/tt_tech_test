@@ -1,14 +1,12 @@
 package com.example.traveltek_tech_test.models;
 
 import javax.persistence.*;
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 
 @Entity
 @Table(name = "segments")
-public class Segment extends Flight {
+public class Segment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,17 +42,9 @@ public class Segment extends Flight {
     @Column(name = "journey")
     private String journey;
 
-    public Segment(String carrier, String depair, String destair, LocalDate inarrivaldate, LocalTime inarrivaltime,
-                   String inbookingclass, String incarriercode, LocalDate indepartdate, LocalTime indeparttime, String inflightclass,
-                   String inflightno, int oneway, String originalcurrency, Double originalprice, LocalDate outarrivaldate, LocalTime outarrivaltime,
-                   String outbookingclass, String outcarriercode, LocalDate outdepartdate, LocalTime outdeparttime, String outflightclass,
-                   String outflightno, String reservation, String arrcode, LocalDate arrdate, LocalTime arrtime, String arrterminal,
-                   String bookingclass, String seatclass, String depcode, LocalDate depdate, LocalTime deptime, String depterminal, int flightid,
-                   String flightno, String journey) {
-        super(carrier, depair, destair, inarrivaldate, inarrivaltime, inbookingclass, incarriercode,
-                indepartdate, indeparttime, inflightclass, inflightno, oneway, originalcurrency,
-                originalprice, outarrivaldate, outarrivaltime, outbookingclass, outcarriercode,
-                outdepartdate, outdeparttime, outflightclass, outflightno, reservation);
+    public Segment(String arrcode, LocalDate arrdate, LocalTime arrtime, String arrterminal,
+                   String bookingclass, String seatclass, String depcode, LocalDate depdate,
+                   LocalTime deptime, String depterminal, int flightid, String flightno, String journey) {
         this.arrcode = arrcode;
         this.arrdate = arrdate;
         this.arrtime = arrtime;
@@ -72,12 +62,10 @@ public class Segment extends Flight {
 
     public Segment () {}
 
-    @Override
     public Long getId() {
         return id;
     }
 
-    @Override
     public void setId(Long id) {
         this.id = id;
     }
@@ -94,7 +82,7 @@ public class Segment extends Flight {
         return arrdate;
     }
 
-    public void setArrdate(Date arrdate) {
+    public void setArrdate(LocalDate arrdate) {
         this.arrdate = arrdate;
     }
 
@@ -102,7 +90,7 @@ public class Segment extends Flight {
         return arrtime;
     }
 
-    public void setArrtime(Time arrtime) {
+    public void setArrtime(LocalTime arrtime) {
         this.arrtime = arrtime;
     }
 
@@ -142,7 +130,7 @@ public class Segment extends Flight {
         return depdate;
     }
 
-    public void setDepdate(Date depdate) {
+    public void setDepdate(LocalDate depdate) {
         this.depdate = depdate;
     }
 
@@ -150,7 +138,7 @@ public class Segment extends Flight {
         return deptime;
     }
 
-    public void setDeptime(Time deptime) {
+    public void setDeptime(LocalTime deptime) {
         this.deptime = deptime;
     }
 

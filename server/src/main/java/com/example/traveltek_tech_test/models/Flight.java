@@ -1,10 +1,8 @@
 package com.example.traveltek_tech_test.models;
 
 import javax.persistence.*;
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 
 @Entity
 @Table(name = "flights")
@@ -22,7 +20,7 @@ public class Flight {
     private String destair;
 
     @Column(name = "inarrivaldate")
-    private LocalDate inarrivaldate
+    private LocalDate inarrivaldate;
     @Column(name = "inarrivaltime")
     private LocalTime inarrivaltime;
     @Column(name = "inbookingclass")
@@ -46,7 +44,7 @@ public class Flight {
     private Double originalprice;
 
     @Column(name = "outarrivaldate")
-    private LocalDate outarrivaldate
+    private LocalDate outarrivaldate;
     @Column(name = "outarrivaltime")
     private LocalTime outarrivaltime;
     @Column(name = "outbookingclass")
@@ -99,9 +97,6 @@ public class Flight {
 
     public Flight() {}
 
-    public Flight(String carrier, String depair, String destair, LocalDate inarrivaldate, LocalTime inarrivaltime, String inbookingclass, String incarriercode, LocalDate indepartdate, LocalTime indeparttime, String inflightclass, String inflightno, int oneway, String originalcurrency, Double originalprice, LocalDate outarrivaldate, LocalTime outarrivaltime, String outbookingclass, String outcarriercode, LocalDate outdepartdate, LocalTime outdeparttime, String outflightclass, String outflightno, String reservation) {
-    }
-
     public Long getId() {
         return id;
     }
@@ -138,7 +133,7 @@ public class Flight {
         return inarrivaldate;
     }
 
-    public void setInarrivaldate(Date inarrivaldate) {
+    public void setInarrivaldate(LocalDate inarrivaldate) {
         this.inarrivaldate = inarrivaldate;
     }
 
@@ -146,7 +141,7 @@ public class Flight {
         return inarrivaltime;
     }
 
-    public void setInarrivaltime(Time inarrivaltime) {
+    public void setInarrivaltime(LocalTime inarrivaltime) {
         this.inarrivaltime = inarrivaltime;
     }
 
@@ -170,7 +165,7 @@ public class Flight {
         return indepartdate;
     }
 
-    public void setIndepartdate(Date indepartdate) {
+    public void setIndepartdate(LocalDate indepartdate) {
         this.indepartdate = indepartdate;
     }
 
@@ -178,7 +173,7 @@ public class Flight {
         return indeparttime;
     }
 
-    public void setIndeparttime(Time indeparttime) {
+    public void setIndeparttime(LocalTime indeparttime) {
         this.indeparttime = indeparttime;
     }
 
@@ -226,7 +221,7 @@ public class Flight {
         return outarrivaldate;
     }
 
-    public void setOutarrivaldate(Date outarrivaldate) {
+    public void setOutarrivaldate(LocalDate outarrivaldate) {
         this.outarrivaldate = outarrivaldate;
     }
 
@@ -234,7 +229,7 @@ public class Flight {
         return outarrivaltime;
     }
 
-    public void setOutarrivaltime(Time outarrivaltime) {
+    public void setOutarrivaltime(LocalTime outarrivaltime) {
         this.outarrivaltime = outarrivaltime;
     }
 
@@ -258,7 +253,7 @@ public class Flight {
         return outdepartdate;
     }
 
-    public void setOutdepartdate(Date outdepartdate) {
+    public void setOutdepartdate(LocalDate outdepartdate) {
         this.outdepartdate = outdepartdate;
     }
 
@@ -266,7 +261,7 @@ public class Flight {
         return outdeparttime;
     }
 
-    public void setOutdeparttime(Time outdeparttime) {
+    public void setOutdeparttime(LocalTime outdeparttime) {
         this.outdeparttime = outdeparttime;
     }
 
