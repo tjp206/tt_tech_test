@@ -2,6 +2,8 @@ package com.example.traveltek_tech_test.models;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Entity
@@ -20,17 +22,17 @@ public class Flight {
     private String destair;
 
     @Column(name = "inarrivaldate")
-    private Date inarrivaldate
+    private LocalDate inarrivaldate
     @Column(name = "inarrivaltime")
-    private Time inarrivaltime;
+    private LocalTime inarrivaltime;
     @Column(name = "inbookingclass")
     private String inbookingclass;
     @Column(name = "incarriercode")
     private String incarriercode;
     @Column(name = "indepartdate")
-    private Date indepartdate;
+    private LocalDate indepartdate;
     @Column(name = "indeparttime")
-    private Time indeparttime;
+    private LocalTime indeparttime;
     @Column(name = "inflightclass")
     private String inflightclass;
     @Column(name = "inflightno")
@@ -44,17 +46,17 @@ public class Flight {
     private Double originalprice;
 
     @Column(name = "outarrivaldate")
-    private Date outarrivaldate
+    private LocalDate outarrivaldate
     @Column(name = "outarrivaltime")
-    private Time outarrivaltime;
+    private LocalTime outarrivaltime;
     @Column(name = "outbookingclass")
     private String outbookingclass;
     @Column(name = "outcarriercode")
     private String outcarriercode;
     @Column(name = "outdepartdate")
-    private Date outdepartdate;
+    private LocalDate outdepartdate;
     @Column(name = "outdeparttime")
-    private Time outdeparttime;
+    private LocalTime outdeparttime;
     @Column(name = "outflightclass")
     private String outflightclass;
     @Column(name = "outflightno")
@@ -64,11 +66,11 @@ public class Flight {
     private String reservation;
 
 
-    public Flight(Long id, String carrier, String depair, String destair, Date inarrivaldate,
-                  Time inarrivaltime, String inbookingclass, String incarriercode, Date indepartdate,
-                  Time indeparttime, String inflightclass, String inflightno, int oneway, String originalcurrency,
-                  Double originalprice, Date outarrivaldate, Time outarrivaltime, String outbookingclass, String outcarriercode,
-                  Date outdepartdate, Time outdeparttime, String outflightclass, String outflightno, String reservation) {
+    public Flight(Long id, String carrier, String depair, String destair, LocalDate inarrivaldate,
+                  LocalTime inarrivaltime, String inbookingclass, String incarriercode, LocalDate indepartdate,
+                  LocalTime indeparttime, String inflightclass, String inflightno, int oneway, String originalcurrency,
+                  Double originalprice, LocalDate outarrivaldate, LocalTime outarrivaltime, String outbookingclass, String outcarriercode,
+                  LocalDate outdepartdate, LocalTime outdeparttime, String outflightclass, String outflightno, String reservation) {
         this.id = id;
         this.carrier = carrier;
         this.depair = depair;
@@ -97,7 +99,7 @@ public class Flight {
 
     public Flight() {}
 
-    public Flight(String carrier, String depair, String destair, Date inarrivaldate, Time inarrivaltime, String inbookingclass, String incarriercode, Date indepartdate, Time indeparttime, String inflightclass, String inflightno, int oneway, String originalcurrency, Double originalprice, Date outarrivaldate, Time outarrivaltime, String outbookingclass, String outcarriercode, Date outdepartdate, Time outdeparttime, String outflightclass, String outflightno, String reservation) {
+    public Flight(String carrier, String depair, String destair, LocalDate inarrivaldate, LocalTime inarrivaltime, String inbookingclass, String incarriercode, LocalDate indepartdate, LocalTime indeparttime, String inflightclass, String inflightno, int oneway, String originalcurrency, Double originalprice, LocalDate outarrivaldate, LocalTime outarrivaltime, String outbookingclass, String outcarriercode, LocalDate outdepartdate, LocalTime outdeparttime, String outflightclass, String outflightno, String reservation) {
     }
 
     public Long getId() {
@@ -132,7 +134,7 @@ public class Flight {
         this.destair = destair;
     }
 
-    public Date getInarrivaldate() {
+    public LocalDate getInarrivaldate() {
         return inarrivaldate;
     }
 
@@ -140,7 +142,7 @@ public class Flight {
         this.inarrivaldate = inarrivaldate;
     }
 
-    public Time getInarrivaltime() {
+    public LocalTime getInarrivaltime() {
         return inarrivaltime;
     }
 
@@ -164,7 +166,7 @@ public class Flight {
         this.incarriercode = incarriercode;
     }
 
-    public Date getIndepartdate() {
+    public LocalDate getIndepartdate() {
         return indepartdate;
     }
 
@@ -172,7 +174,7 @@ public class Flight {
         this.indepartdate = indepartdate;
     }
 
-    public Time getIndeparttime() {
+    public LocalTime getIndeparttime() {
         return indeparttime;
     }
 
@@ -220,7 +222,7 @@ public class Flight {
         this.originalprice = originalprice;
     }
 
-    public Date getOutarrivaldate() {
+    public LocalDate getOutarrivaldate() {
         return outarrivaldate;
     }
 
@@ -228,7 +230,7 @@ public class Flight {
         this.outarrivaldate = outarrivaldate;
     }
 
-    public Time getOutarrivaltime() {
+    public LocalTime getOutarrivaltime() {
         return outarrivaltime;
     }
 
@@ -252,7 +254,7 @@ public class Flight {
         this.outcarriercode = outcarriercode;
     }
 
-    public Date getOutdepartdate() {
+    public LocalDate getOutdepartdate() {
         return outdepartdate;
     }
 
@@ -260,7 +262,7 @@ public class Flight {
         this.outdepartdate = outdepartdate;
     }
 
-    public Time getOutdeparttime() {
+    public LocalTime getOutdeparttime() {
         return outdeparttime;
     }
 

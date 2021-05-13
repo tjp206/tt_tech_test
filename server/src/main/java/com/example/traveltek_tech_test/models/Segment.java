@@ -2,6 +2,8 @@ package com.example.traveltek_tech_test.models;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Entity
@@ -15,9 +17,9 @@ public class Segment extends Flight {
     @Column(name = "arrcode")
     private String arrcode;
     @Column(name = "arrdate")
-    private Date arrdate;
+    private LocalDate arrdate;
     @Column(name = "arrtime")
-    private Time arrtime;
+    private LocalTime arrtime;
     @Column(name = "arrterminal")
     private String arrterminal;
 
@@ -29,9 +31,9 @@ public class Segment extends Flight {
     @Column(name = "depcode")
     private String depcode;
     @Column(name = "depdate")
-    private Date depdate;
+    private LocalDate depdate;
     @Column(name = "deptime")
-    private Time deptime;
+    private LocalTime deptime;
     @Column(name = "depterminal")
     private String depterminal;
 
@@ -42,12 +44,12 @@ public class Segment extends Flight {
     @Column(name = "journey")
     private String journey;
 
-    public Segment(String carrier, String depair, String destair, Date inarrivaldate, Time inarrivaltime,
-                   String inbookingclass, String incarriercode, Date indepartdate, Time indeparttime, String inflightclass,
-                   String inflightno, int oneway, String originalcurrency, Double originalprice, Date outarrivaldate, Time outarrivaltime,
-                   String outbookingclass, String outcarriercode, Date outdepartdate, Time outdeparttime, String outflightclass,
-                   String outflightno, String reservation, String arrcode, Date arrdate, Time arrtime, String arrterminal,
-                   String bookingclass, String seatclass, String depcode, Date depdate, Time deptime, String depterminal, int flightid,
+    public Segment(String carrier, String depair, String destair, LocalDate inarrivaldate, LocalTime inarrivaltime,
+                   String inbookingclass, String incarriercode, LocalDate indepartdate, LocalTime indeparttime, String inflightclass,
+                   String inflightno, int oneway, String originalcurrency, Double originalprice, LocalDate outarrivaldate, LocalTime outarrivaltime,
+                   String outbookingclass, String outcarriercode, LocalDate outdepartdate, LocalTime outdeparttime, String outflightclass,
+                   String outflightno, String reservation, String arrcode, LocalDate arrdate, LocalTime arrtime, String arrterminal,
+                   String bookingclass, String seatclass, String depcode, LocalDate depdate, LocalTime deptime, String depterminal, int flightid,
                    String flightno, String journey) {
         super(carrier, depair, destair, inarrivaldate, inarrivaltime, inbookingclass, incarriercode,
                 indepartdate, indeparttime, inflightclass, inflightno, oneway, originalcurrency,
@@ -88,7 +90,7 @@ public class Segment extends Flight {
         this.arrcode = arrcode;
     }
 
-    public Date getArrdate() {
+    public LocalDate getArrdate() {
         return arrdate;
     }
 
@@ -96,7 +98,7 @@ public class Segment extends Flight {
         this.arrdate = arrdate;
     }
 
-    public Time getArrtime() {
+    public LocalTime getArrtime() {
         return arrtime;
     }
 
@@ -136,7 +138,7 @@ public class Segment extends Flight {
         this.depcode = depcode;
     }
 
-    public Date getDepdate() {
+    public LocalDate getDepdate() {
         return depdate;
     }
 
@@ -144,7 +146,7 @@ public class Segment extends Flight {
         this.depdate = depdate;
     }
 
-    public Time getDeptime() {
+    public LocalTime getDeptime() {
         return deptime;
     }
 
